@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            :root {
+                --background: white;
+                --background-alter: black;
+            }
+            [data-theme='light'] {
+                --background: white;
+                --background-alter: black;
+            }
+            [data-theme='dark'] {
+                --background: black;
+                --background-alter: white;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .block {
+                width: 100vw;
+                height: 100vh;
+                background: var(--background); /* Фоновый рисунок */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s;
+            }
+            .btn {
+                background: var(--background-alter);
+                font-size: 4em;
+                color: var(--background);
+                padding: 8px 12px;
+                border-radius: 15px;
+                border: none;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="block" id="main" data-theme="dark">
+            <button class="btn" id="btn">Сменить тему</button>
+        </div>
+        <script>
+            let main = document.getElementById('main');
+            let btn = document.getElementById('btn');
+            btn.addEventListener('click', changeTheme);
+            function changeTheme() {
+                if (main.getAttribute('data-theme') === 'light') {
+                    main.setAttribute('data-theme', 'dark');
+                } else {
+                    main.setAttribute('data-theme', 'light');
+                }
+            }
+        </script>
+    </body>
+</html>

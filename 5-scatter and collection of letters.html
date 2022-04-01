@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .fon {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .fon-img {
+                width: auto;
+                height: auto;
+                transform: scale(1.5);
+                transition: all 1s;
+            }
+            .effects {
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .text {
+                text-align: center;
+                max-width: 40vw;
+            }
+            .letter {
+                display: inline;
+                color: black;
+                font-size: 3rem;
+                line-height: 1.2em;
+                position: relative;
+                transition: top 1.6s, left 1.6s, right 1.6s, bottom 1.6s,
+                    transform 1.6s cubic-bezier(0.22, 1, 0.56, 1);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="effects">
+            <text class="text" id="textBlock">
+                <div class="span-text" id="textTop"></div>
+                <div class="span-text" id="textCenter"></div>
+                <div class="span-text" id="textBottom"></div>
+            </text>
+        </div>
+        <script>
+            let text =
+                'Мы Издательство «Silk Road Media» ведём свою деятельность с 2017 года по настоящее время. За это время мы опубликовали ряд книг, альбомов, научных работ по культурному наследию Узбекистана';
+            let textTop = document.getElementById('textTop');
+            let textCenter = document.getElementById('textCenter');
+            let textBottom = document.getElementById('textBottom');
+            let letter = document.getElementsByClassName('letter');
+            let textBottomArray = [];
+            let textCenterArray = [];
+            let textTopArray = [];
+            textTopArray = text.split(' ')[0].split(''); // разбивает 1 часть на буквы
+
+            textCenterArray = text
+                .split('.')[0]
+                .split('')
+                .slice(textTopArray.length + 1); // разбиваем 2 часть на буквы
+            textCenterArray.push('.');
+
+            textBottomArray = text.split('.')[1].split('').slice(1); // разбиваем 3 часть на буквы
+
+            function createElement(itemArray, item) {
+                for (let i = 0; i < itemArray.length; i++) {
+                    item.innerHTML += `<span class="letter">${itemArray[i]}</span>`;
+                }
+            }
+
+            function scatterElementRandom(item) {
+                for (let i = 0; i < item.length; i++) {
+                    let randomX = Math.random() * 0.9 * window.innerWidth;
+                    let randomY = Math.random() * 0.9 * window.innerWidth;
+                    let randomFontSize = Math.random() * 15;
+                    let randomAngle = Math.round(Math.random() * 360);
+                    item[i].style.fontSize = `${randomFontSize}rem`;
+                    item[i].style.transform = `rotateZ(${randomAngle}deg)`;
+                    item[i].style.display = 'inline-block';
+                    if (i % 5 == 0) {
+                        item[i].style.bottom = `${randomX + i}px`;
+                        item[i].style.right = `${randomY + i}px`;
+                    } else if (i % 3 == 0) {
+                        item[i].style.top = `${randomX + i}px`;
+                        item[i].style.left = `${randomY + i}px`;
+                    } else if (i % 7 == 0) {
+                        item[i].style.bottom = `${randomX + i}px`;
+                        item[i].style.left = `${randomY + i}px`;
+                    } else {
+                        item[i].style.top = `${randomX + i * 2}px`;
+                        item[i].style.right = `${randomY + i * 2}px`;
+                    }
+                }
+            }
+
+            function returnElementPosition(item) {
+                for (let i = 0; i < item.length; i++) {
+                    item[i].style.fontSize = '3rem';
+
+                    if (i % 5 == 0) {
+                        item[i].style.bottom = '0';
+                        item[i].style.right = '0';
+                    } else if (i % 3 == 0) {
+                        item[i].style.top = '0';
+                        item[i].style.left = '0';
+                    } else if (i % 7 == 0) {
+                        item[i].style.bottom = '0';
+                        item[i].style.left = '0';
+                    } else {
+                        item[i].style.top = '0';
+                        item[i].style.right = '0';
+                    }
+                    item[i].style.transform = `rotateZ(0deg)`;
+                    setTimeout(() => {
+                        item[i].style.display = 'inline';
+                    }, 1450);
+                }
+            }
+
+            createElement(textTopArray, textTop);
+            createElement(textCenterArray, textCenter);
+            createElement(textBottomArray, textBottom);
+
+            scatterElementRandom(letter);
+
+            setTimeout(() => {
+                returnElementPosition(letter);
+            }, 2000);
+        </script>
+    </body>
+</html>

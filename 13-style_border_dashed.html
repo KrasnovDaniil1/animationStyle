@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        .border-block {
+            position: relative;
+            margin-top: 50px;
+            background: cyan;
+            width: 50vw;
+            height: 50vh;
+            font-size: 40px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .border-horizontal {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-image: linear-gradient(90deg, red 50%, transparent 0);
+            background-position: bottom;
+            background-size: 100px 100%;
+            background-repeat: repeat-x;
+            left: 0;
+        }
+        .border-vertical {
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            background-image: linear-gradient(180deg, red 60%, transparent 0);
+            background-position: 0;
+            background-size: 100% 70px;
+            background-repeat: repeat-y;
+            top: 0;
+        }
+        .top {
+            top: 0;
+        }
+        .bottom {
+            bottom: 0;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            right: 0;
+        }
+    </style>
+    <body>
+        <div class="border-block">
+            <div class="border-horizontal top"></div>
+            <div class="border-horizontal bottom"></div>
+            <div class="border-vertical right"></div>
+            <div class="border-vertical left"></div>
+
+            <span class="text">Кастомный border</span>
+        </div>
+    </body>
+</html>

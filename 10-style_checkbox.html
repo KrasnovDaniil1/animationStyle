@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .custom-checkboxs {
+                display: flex;
+                flex-direction: column;
+            }
+            .label {
+                display: flex;
+                align-items: center;
+            }
+            .checkbox {
+                display: none;
+            }
+            .checkbox:checked + .fake::before {
+                opacity: 1;
+            }
+            .checkbox:checked + .fake {
+                background: #d8b069;
+                border: 1px solid #d8b069;
+            }
+            .fake {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #787878;
+                position: relative;
+                transition: all 0.5s;
+                margin-right: 9px;
+            }
+            .fake::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 10px;
+                height: 4px;
+                border-left: 2.5px solid white;
+                border-bottom: 2.5px solid white;
+                top: 35%;
+                left: 45%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+                opacity: 0;
+                transition: all 0.5s;
+            }
+            .text {
+            }
+        </style>
+    </head>
+    <body>
+        <div class="custom-checkboxs">
+            <label class="label">
+                <input type="checkbox" class="checkbox" />
+                <span class="fake"></span>
+                <span class="text">Текст</span>
+            </label>
+            <label class="label">
+                <input type="checkbox" class="checkbox" />
+                <span class="fake"></span>
+                <span class="text">Текст</span>
+            </label>
+        </div>
+    </body>
+</html>

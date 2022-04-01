@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .bar {
+                width: 100%;
+                height: 100vh;
+                max-width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 7em;
+                color: white;
+            }
+            .container {
+                width: 100vw;
+                overflow-x: hidden;
+            }
+            .mainBar {
+                position: fixed;
+            }
+            .effectBlock {
+                width: 100vw;
+                max-width: 100%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+                transition: all 0.05s;
+            }
+            .small {
+                height: 177px;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <div class="mainBar bar" style="background-color: aqua">MainBar</div>
+        <div class="effectBlock" id="effectBlock">
+            <div
+                class="bar small"
+                id="FirstBar"
+                style="background-color: cornflowerblue"
+            >
+                FirstBar
+            </div>
+            <div class="bar" style="background-color: cadetblue">SecondBar</div>
+            <div class="bar" style="background-color: cadetblue">SecondBar</div>
+        </div>
+        <script>
+            let effectBlock = document.getElementById('effectBlock');
+            let FirstBar = document.getElementById('FirstBar');
+            let leftBlock = 0.6;
+            window.addEventListener('scroll', lookElem);
+            effectBlock.style.left = `${Math.ceil(
+                FirstBar.offsetWidth * leftBlock
+            )}px`;
+            effectBlock.style.top = `${Math.ceil(
+                window.innerHeight - FirstBar.offsetHeight
+            )}px`;
+            function lookElem() {
+                console.log(window.innerWidth / window.innerHeight);
+                if (
+                    Math.ceil(
+                        FirstBar.offsetWidth * leftBlock -
+                            (window.pageYOffset * window.innerWidth) /
+                                window.innerHeight
+                    ) >= 0
+                ) {
+                    effectBlock.style.left = `${Math.ceil(
+                        FirstBar.offsetWidth * leftBlock -
+                            (window.pageYOffset * window.innerWidth) /
+                                window.innerHeight
+                    )}px`;
+                } else {
+                    effectBlock.style.left = '0';
+                }
+            }
+        </script>
+    </body>
+</html>

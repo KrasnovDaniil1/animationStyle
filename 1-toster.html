@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        .container {
+            position: relative;
+            width: 300px;
+            color: black;
+            font-size: 50px;
+        }
+        .after {
+            position: absolute;
+            background-color: blue;
+            left: 60px;
+            top: 0;
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+        }
+        .span {
+            position: absolute;
+            left: -60px;
+            color: white;
+        }
+    </style>
+    <body>
+        <span class="container">
+            Hello Toster
+            <div class="after">
+                <div class="span">Hello Toster</div>
+            </div>
+        </span>
+    </body>
+</html>
