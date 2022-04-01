@@ -4,31 +4,28 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
         <title>Document</title>
     </head>
     <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .parallax {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      font-size: 120px;
-      position: sticky;
-      top: 0;
-    }
-    .parallax:nth-child(odd) {
-      background-color: red
-    }
-    .parallax:nth-child(even) {
-      background-color: green
-    }
+        .parallax {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        .parallax:nth-child(odd) {
+            background-color: #3333ff;
+        }
+        .parallax:nth-child(even) {
+            background-color: #cdffcc;
+        }
     </style>
     <body>
         <div class="parallax">Section-1</div>

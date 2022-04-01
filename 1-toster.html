@@ -4,36 +4,40 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
         <title>Document</title>
     </head>
     <style>
-        .container {
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .block {
             position: relative;
-            width: 300px;
-            color: black;
+            display: inline;
             font-size: 50px;
         }
-        .after {
-            position: absolute;
-            background-color: blue;
-            left: 60px;
-            top: 0;
-            width: 200px;
-            height: 100px;
-            overflow: hidden;
+        .first-text {
+            color: black;
+            background: blue;
         }
-        .span {
+        .after-text {
             position: absolute;
-            left: -60px;
-            color: white;
+            width: 49%;
+            left: 0;
+            color: blue;
+            background: black;
+            white-space: nowrap;
+            overflow: hidden;
         }
     </style>
     <body>
-        <span class="container">
-            Hello Toster
-            <div class="after">
-                <div class="span">Hello Toster</div>
-            </div>
-        </span>
+        <div class="block">
+            <span class="first-text">Hello Toster</span>
+            <span class="after-text">Hello Toster</span>
+        </div>
     </body>
 </html>
