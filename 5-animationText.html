@@ -4,26 +4,11 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
         <title>Document</title>
         <style>
-            * {
-                margin: 0;
-                padding: 0;
-            }
-            .fon {
-                position: absolute;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-            }
-            .fon-img {
-                width: auto;
-                height: auto;
-                transform: scale(1.5);
-                transition: all 1s;
-            }
-            .effects {
+       
+            .block {
                 overflow: hidden;
                 width: 100vw;
                 height: 100vh;
@@ -33,21 +18,19 @@
             }
             .text {
                 text-align: center;
-                max-width: 40vw;
+                max-width: 50vw;
             }
             .letter {
-                display: inline;
-                color: black;
-                font-size: 3rem;
-                line-height: 1.2em;
                 position: relative;
+                color: black;
+                line-height: 1.2;
                 transition: top 1.6s, left 1.6s, right 1.6s, bottom 1.6s,
                     transform 1.6s cubic-bezier(0.22, 1, 0.56, 1);
             }
         </style>
     </head>
     <body>
-        <div class="effects">
+        <div class="block">
             <text class="text" id="textBlock">
                 <div class="span-text" id="textTop"></div>
                 <div class="span-text" id="textCenter"></div>
@@ -55,6 +38,8 @@
             </text>
         </div>
         <script>
+
+            /* разбил на три части текст так как подругому разбить на предложения не получается.*/
             let text =
                 'Мы Издательство «Silk Road Media» ведём свою деятельность с 2017 года по настоящее время. За это время мы опубликовали ряд книг, альбомов, научных работ по культурному наследию Узбекистана';
             let textTop = document.getElementById('textTop');
@@ -123,9 +108,7 @@
                         item[i].style.right = '0';
                     }
                     item[i].style.transform = `rotateZ(0deg)`;
-                    setTimeout(() => {
-                        item[i].style.display = 'inline';
-                    }, 1450);
+                    item[i].style.display = 'inline';
                 }
             }
 
@@ -137,7 +120,7 @@
 
             setTimeout(() => {
                 returnElementPosition(letter);
-            }, 2000);
+            }, 1000);
         </script>
     </body>
 </html>

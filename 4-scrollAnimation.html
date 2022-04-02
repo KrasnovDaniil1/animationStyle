@@ -4,46 +4,36 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
         <title>Document</title>
     </head>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
         .section {
             width: 100%;
             min-height: 100vh;
-            background: black;
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 150px;
-            font-weight: bold;
-        }
-        .one {
-            background-color: aqua;
-        }
-        .two {
-            background-color: aquamarine;
+            color: white;
         }
     </style>
     <body>
-        <div class="section one">1</div>
-        <div class="section two" id="this">2</div>
+        <div class="section one" style="background: #053161">1</div>
+        <div class="section two" style="background: #ff6a34">2</div>
+        <div class="section two" id="elem" style="background: #bed9da">3</div>
     </body>
     <script>
-        const thisElement = document.getElementById('this');
+        const elem = document.getElementById('elem');
 
         const scrollTo = () => {
             const step = 10;
-            if (thisElement.offsetTop < window.pageYOffset + step) {
-                document.documentElement.scrollTo(0, thisElement.offsetTop);
+            if (elem.offsetTop < window.pageYOffset + step) {
+                document.documentElement.scrollTo(0, elem.offsetTop);
             } else {
                 document.documentElement.scrollTo(0, window.pageYOffset + step);
             }
-            if (thisElement.offsetTop !== window.pageYOffset)
+            if (elem.offsetTop !== window.pageYOffset)
                 requestAnimationFrame(scrollTo);
         };
 
