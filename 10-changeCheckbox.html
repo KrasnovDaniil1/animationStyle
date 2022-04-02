@@ -25,11 +25,11 @@
                 border: 1px solid #d8b069;
             }
             .fake {
+                position: relative;
                 display: inline-block;
                 width: 15px;
                 height: 15px;
                 border: 1px solid #787878;
-                position: relative;
                 transition: all 0.5s;
                 margin-right: 9px;
             }
@@ -41,13 +41,11 @@
                 height: 4px;
                 border-left: 2.5px solid white;
                 border-bottom: 2.5px solid white;
-                top: 35%;
-                left: 45%;
+                top: 40%;
+                left: 50%;
                 transform: translate(-50%, -50%) rotate(-45deg);
                 opacity: 0;
                 transition: all 0.5s;
-            }
-            .text {
             }
         </style>
     </head>
@@ -56,12 +54,7 @@
             <label class="label">
                 <input type="checkbox" class="checkbox" />
                 <span class="fake"></span>
-                <span class="text">Текст</span>
-            </label>
-            <label class="label">
-                <input type="checkbox" class="checkbox" />
-                <span class="fake"></span>
-                <span class="text">Текст</span>
+                <span>Текст</span>
             </label>
         </div>
     </body>
