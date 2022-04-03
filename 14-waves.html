@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    .waves-block {
-        width: 100vw;
-        height: 100vh;
-        background: #3e4668;
-        overflow: hidden;
-        position: relative;
-    }
-    .waves {
-        position: absolute;
-        top: 85vh;
-        background: #91a8cf;
-        width: 200vw;
-        height: 200vw;
-        z-index: 100;
-        animation-name: WavesRotating;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        border-radius: 41%;
-
-    }
-    .one {
-        left: -100%;
-        animation-duration: 7.5s;
-    }
-    .two {
-        left: -50%;
-        animation-duration: 8.5s;
-
-    }
-    .three {
-        left: 10%;
-        animation-duration: 7.5s;
-    }
-    @keyframes WavesRotating {
-        0% {
-            transform: rotate(0deg) ;
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
+        <title>Document</title>
+    </head>
+    <style>
+        .waves-block {
+            width: 100vw;
+            height: 100vh;
+            background: #3e4668;
+            overflow: hidden;
+            position: relative;
         }
-        100% {
-            transform: rotate(360deg);
+        .waves {
+            position: absolute;
+            top: 85vh;
+            background: #91a8cf;
+            width: 200vw;
+            height: 200vw;
+            z-index: 100;
+            animation-name: WavesRotating;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            border-radius: 41%;
         }
-    }
-</style>
-<body class="waves-block">
+        .one {
+            left: -100%;
+            animation-duration: 7.5s;
+        }
+        .two {
+            left: -50%;
+            animation-duration: 8.5s;
+        }
+        .three {
+            left: 10%;
+            animation-duration: 7.5s;
+        }
+        @keyframes WavesRotating {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <body class="waves-block">
         <div class="waves one"></div>
         <div class="waves two"></div>
         <div class="waves three"></div>
-</body>
+    </body>
 </html>
