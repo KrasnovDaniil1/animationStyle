@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../index.css" />
+        <title>Document</title>
+        <style>
+            .block {
+                position: relative;
+                width: 100%;
+                max-height: 100vh;
+                display: flex;
+            }
+            .see-image {
+                position: absolute;
+                left: 0;
+                width: 50%;
+                height: 100vh;
+                overflow: hidden;
+            }
+            .image {
+                min-width: 100vw;
+                height: 100vh;
+            }
+            .cursor {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0.25vw;
+                height: 100vh;
+                background: rgb(0, 0, 0);
+            }
+            .cursor-btn {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 4vw;
+                border-radius: 50%;
+                border: 0.25vw solid rgb(0, 0, 0);
+                aspect-ratio: 1/1;
+                background: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 50px;
+                font-weight: 900;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="block">
+            <div class="see-image" id="seeImage">
+                <img src="./dayWitnSun.jpg" alt="Изображение" class="image" />
+            </div>
+            <img src="./dayWithMoon.jpg" alt="Изображение" class="image" />
+            <div class="cursor" id="cursor">
+                <div class="cursor-btn" id="cursorBtn">&#60;&#62;</div>
+            </div>
+        </div>
+        <script>
+            let cursor = document.getElementById('cursor');
+            let cursorBtn = document.getElementById('cursorBtn');
+
+            let seeImage = document.getElementById('seeImage');
+
+            let cursorBtnOver = false;
+
+            cursorBtn.addEventListener('mouseover', elemOver);
+
+            function elemOver() {
+                cursorBtnOver = true;
+            }
+
+            cursorBtn.addEventListener('mouseout', elemOut);
+
+            function elemOut() {
+                cursorBtnOver = false;
+            }
+
+            document.addEventListener('mousemove', elemMoving);
+
+            function elemMoving() {
+                if (cursorBtnOver) {
+                    cursor.style.left = event.clientX + 'px';
+                    seeImage.style.width = event.clientX + 'px';
+                }
+            }
+        </script>
+    </body>
+</html>
