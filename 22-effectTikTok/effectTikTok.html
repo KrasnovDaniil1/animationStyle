@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../index.css" />
+        <title>Document</title>
+        <style>
+            .block {
+                background: black;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+                display: flex;
+            }
+            .image-see {
+                position: relative;
+                width: 10%;
+                height: 100vh;
+                overflow: hidden;
+            }
+            .image-see:nth-child(odd) {
+                animation: TopAnim 3s cubic-bezier(0.27, 0, 1, 0.73);
+            }
+            .image-see:nth-child(even) {
+                animation: BottomAnim 3s cubic-bezier(0.27, 0, 1, 0.73);
+            }
+            .image {
+                min-width: 100vw;
+                height: 100vh;
+            }
+            @keyframes TopAnim {
+                0% {
+                    top: 100vh;
+                }
+                100% {
+                    top: 0;
+                }
+            }
+            @keyframes BottomAnim {
+                0% {
+                    bottom: 100vh;
+                }
+                100% {
+                    bottom: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="block">
+            <div class="image-see">
+                <img src="./city.jpg" class="image" />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-10%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-20%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-30%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-40%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-50%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-60%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-70%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-80%)"
+                />
+            </div>
+            <div class="image-see">
+                <img
+                    src="./city.jpg"
+                    class="image"
+                    style="transform: translateX(-90%)"
+                />
+            </div>
+        </div>
+        <script></script>
+    </body>
+</html>
+<!-- style="transform: translateX(-20%)" -->
