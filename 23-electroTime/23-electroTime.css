@@ -1,0 +1,59 @@
+.block {
+    width: 100%;
+    height: 100vh;
+    background: black;
+}
+
+.time {
+    position: relative;
+    width: 15vw;
+    aspect-ratio: 1/2;
+    /* background: green; */
+}
+
+.stick {
+    position: absolute;
+    width: calc(100% - 5vh);
+    height: 5vh;
+    display: flex;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 2.5vh solid transparent;
+    border-right: 2.5vh solid #0ff;
+    border-bottom: 2.5vh solid transparent;
+}
+.rectangle {
+    width: 100%;
+    height: 100%;
+    background: #0ff;
+}
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 2.5vh solid transparent;
+    border-left: 2.5vh solid #0ff;
+    border-bottom: 2.5vh solid transparent;
+}
+.stick-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.stick-left {
+    left: 2.5vh;
+    transform: rotate(90deg);
+    transform-origin: left;
+}
+.stick-right {
+    right: 2.5vh;
+    transform: rotate(-90deg);
+    transform-origin: right;
+}
+.stick-middle {
+    top: calc(50% - 5vh);
+}
+.stick-bottom {
+    top: calc(100% - 10vh);
+}
