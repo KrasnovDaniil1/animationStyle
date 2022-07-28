@@ -91,3 +91,7 @@
 ### 23) electroTime Аналог цифровых часов.
 
 <img src="./assets/23.png" />
+
+### 24) skeletonLoading Загрузка карточек на странице.
+
+<img src="./assets/24.jpg" />

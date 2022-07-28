@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
+        <title>Document</title>
+        <style>
+            body {
+                background-color: #f2f5f7;
+            }
+            .card {
+                position: relative;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 400px;
+                background: #fff;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .image {
+                width: 100%;
+                aspect-ratio: 5/3;
+            }
+            .skeleton {
+                position: relative;
+                border-radius: 4px;
+                background-color: #e2e5e7;
+                background-image: linear-gradient(
+                    to right,
+                    rgba(167, 167, 167, 0.05) 10%,
+                    rgba(169, 169, 169, 0.2) 100%,
+                    rgba(169, 169, 170, 0.3) 0%
+                );
+                background-size: 50px 100%;
+                background-repeat: no-repeat;
+                background-position: left -50% top 0;
+                animation: shine 2s ease infinite;
+            }
+            .text {
+                margin: 20px 30px;
+                height: 40px;
+            }
+
+            @keyframes shine {
+                to {
+                    background-position: left calc(100% + 50px) top 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <div class="image skeleton"></div>
+            <div class="text skeleton"></div>
+            <div class="text skeleton"></div>
+        </div>
+    </body>
+</html>
