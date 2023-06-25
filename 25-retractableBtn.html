@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        .btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            height: 50px; /* нужно будет заменить на height:100%; получаем у родителя*/
+            font-size: 24px;
+            color: #ffffff;
+            background: #0b64fe;
+            border-radius: 4px;
+            transition: all 0.5s;
+        }
+        .btn__icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            aspect-ratio: 1/1;
+        }
+        .btn__title {
+            max-width: 0px;
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+        .btn:hover {
+            padding-left: 10px;
+        }
+        .btn:hover .btn__title {
+            max-width: 150px; /* костыль нужно менять под максимальный размер кнопки для анимации*/
+        }
+    </style>
+    <body>
+        <div class="btn">
+            <span class="btn__title">Добавить</span>
+            <i class="btn__icon">+</i>
+        </div>
+    </body>
+</html>
