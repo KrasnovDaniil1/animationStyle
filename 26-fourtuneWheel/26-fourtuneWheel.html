@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        #wheel {
+            width: 100%;
+            height: 100%;
+            transition: all 3s;
+            transform: rotate(22.5deg);
+            /* transform: rotate(200deg); */
+        }
+        /* .wheel_active {
+            animation-name: squareRound;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: 3;
+        } */
+        #btn {
+            position: absolute;
+            top: 100%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            font-size: 30px;
+            padding: 5px;
+        }
+        .decor_line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 100px;
+            background: red;
+        }
+        /* @keyframes squareRound {
+            0% {
+                transform: rotate(22.5deg);
+            }
+            100% {
+                transform: rotate(382.5deg);
+            }
+        } */
+    </style>
+    <body>
+        <div class="card">
+            <img id="wheel" src="./fourtuneWheel.png" />
+            <button id="btn">Нажми</button>
+            <div class="decor_line"></div>
+        </div>
+    </body>
+    <script>
+        let wheel = document.getElementById("wheel");
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", roundWheel);
+
+        let sale = ['50', '47','45','40','37','35','33','30']
+        function roundWheel() {
+            num_ran = Math.floor(Math.random() * 8);
+            console.log(num_ran)
+            wheel.style.transform = `rotate(${
+                45 * num_ran + 22.5 + 360 * num_ran
+            }deg)`;
+            alert(sale[num_ran])
+        }
+    </script>
+</html>

@@ -99,3 +99,7 @@
 ### 25) retractable Выдвижной текст при наведение.
 
 <img src="./assets/25.png" />
+
+### 26) fourtuneWheel Колесо Фортуны.
+
+<img src="./assets/26.jpg" />
