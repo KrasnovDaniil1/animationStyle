@@ -30,6 +30,7 @@
     width: 100%;
     aspect-ratio: 16/9;
     border-radius: max(10px, 0.52vw);
+    object-fit: cover;
 }
 .elem-title {
     font-size: max(25px, 1.3vw);
